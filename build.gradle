@@ -1,0 +1,42 @@
+group 'at.jku.ce'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'idea'
+apply plugin: 'gradle-one-jar'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-actor_2.11:2.3.9'
+    compile 'com.typesafe.akka:akka-remote_2.11:2.3.9'
+    compile 'com.typesafe.akka:akka-slf4j_2.11:2.3.9'
+    compile 'org.scala-lang:scala-library:2.11.7'
+    compile 'com.google.guava:guava:18.0'
+    compile 'org.apache.httpcomponents:fluent-hc:4.5.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.1'
+    compile 'org.apache.httpcomponents:httpcore:4.4.4'
+    compile 'com.google.code.gson:gson:2.5'
+    compile fileTree(dir: './libs/', include: '*.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript{
+    repositories{
+        mavenCentral()
+        maven{ url 'http://repo.spray.io'}
+    }
+    dependencies{
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+task ceueK3BusProviderJar(type: OneJar){
+    mainClass = 'util.Startup'
+}
+

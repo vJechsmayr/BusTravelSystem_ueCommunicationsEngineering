@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ce-ue-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/ce-ue-api-bookingupdate.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
